@@ -13,11 +13,9 @@ const Login = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // Bu effektda foydalanuvchi identifikatsiyasini tekshirishni amalga oshirishingiz kerak
-    // Misol uchun, session/local storage orqali foydalanuvchi ma'lumotlarini tekshirish
     const user = JSON.parse(localStorage.getItem('user') || sessionStorage.getItem('user'))
     if (user) {
-      setIsUser(true) // Foydalanuvchi identifikatsiyasi aniqlangan
+      setIsUser(true)
     }
   }, [])
 
@@ -50,8 +48,8 @@ const Login = () => {
 
   return (
     <section
-      className="fixed top-0 left-0 w-full h-screen bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: 'url(/assets/bodyBG.png)' }}
+      className="fixed top-0 left-0 w-full h-screen bg-body-bg bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: 'url(/assets/bodyBG.png' }}
     >
       <ShowLogo />
       <form
@@ -59,7 +57,7 @@ const Login = () => {
         onSubmit={onSubmitForm}
       >
         <div className="flex justify-center items-center flex-col">
-          <img src="/assets/logo.svg" alt="logo" loading="lazy" className="w-[150px] h-20" />
+          <img src="/assets/logo.svg" alt="logo" loading="lazy" className="w-40 h-20" />
           <div className="text-gray-700 text-center text-20 pt-16">Welcome Back!</div>
           <div className="mt-3 mb-10 text-gray-400 text-center font-inter text-15 font-normal leading-5">
             Sign in to continue to your Digital Library
