@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
+
+import { useTranslation } from 'react-i18next'
+import { translationKeys } from '../lib/translationKey'
+
 import ShowLogo from '../components/ShowLogo'
 
 const Login = () => {
@@ -10,7 +14,9 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const [rememberMe, setRememberMe] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user') || sessionStorage.getItem('user'))
@@ -19,31 +25,22 @@ const Login = () => {
     }
   }, [])
 
-  const isValidEmail = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-  }
-
-  const isValidPassword = (password) => {
-    return password.length >= 8
-  }
-
   const onSubmitForm = (e) => {
     e.preventDefault()
 
-    if (!isValidEmail(email) || !isValidPassword(password)) {
-      setErrorMessage('Invalid email or password.')
-      return
-    }
+    const user = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser'))
 
-    const user = { email, password }
+    if (user && user.email === email && user.password === password) {
+      if (rememberMe) {
+        localStorage.setItem('currentUser', JSON.stringify(user))
+      } else {
+        sessionStorage.setItem('currentUser', JSON.stringify(user))
+      }
 
-    if (rememberMe) {
-      localStorage.setItem('user', JSON.stringify(user))
+      navigate('/')
     } else {
-      sessionStorage.setItem('user', JSON.stringify(user))
+      setErrorMessage(t(translationKeys['Invalid email or password.']))
     }
-
-    navigate(isUser ? '/home' : '/')
   }
 
   return (
@@ -58,14 +55,14 @@ const Login = () => {
       >
         <div className="flex justify-center items-center flex-col">
           <img src="/assets/logo.svg" alt="logo" loading="lazy" className="w-40 h-20" />
-          <div className="text-gray-700 text-center text-20 pt-16">Welcome Back!</div>
+          <div className="text-gray-700 text-center text-20 pt-16">{t(translationKeys['Welcome Back !'])}</div>
           <div className="mt-3 mb-10 text-gray-400 text-center font-inter text-15 font-normal leading-5">
-            Sign in to continue to your Digital Library
+            {t(translationKeys['Sign in to continue to yourDigital Library'])}
           </div>
         </div>
         <div>
           <label htmlFor="email" className="text-gray-700 text-16 leading-4 mb-2">
-            Email
+            {t(translationKeys.Email)}
           </label>
           <input
             type="email"
@@ -78,9 +75,9 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
+        <div className="mt-4">
           <label htmlFor="password" className="text-gray-700 text-16 leading-4 mb-2">
-            Password
+            {t(translationKeys.Password)}
           </label>
           <div className="relative">
             <input
@@ -119,12 +116,12 @@ const Login = () => {
               onChange={(e) => setRememberMe(e.target.checked)}
             />
             <label htmlFor="remember" className="ms-2 text-gray-700 text-base font-normal leading-4">
-              Remember me
+              {t(translationKeys['Remember me'])}
             </label>
           </div>
           <div>
             <Link to="/forgot-password" className="text-gray-700 text-right text-base font-normal leading-4 underline">
-              Forgot password?
+              {t(translationKeys['Forgot password?'])}
             </Link>
           </div>
         </div>
@@ -132,12 +129,12 @@ const Login = () => {
           className="text-white my-12 text-center text-base font-semibold leading-none w-full py-2.5 px-4 rounded-md bg-[#fa7c54]"
           type="submit"
         >
-          Login
+          {t(translationKeys.Login)}
         </button>
         <p className="text-gray-700 text-base font-normal leading-4">
-          New User?
+          {t(translationKeys['New User?'])}{' '}
           <Link to="/signup" className="underline">
-            Register Here
+            {t(translationKeys['Register Here'])}
           </Link>
         </p>
       </form>
