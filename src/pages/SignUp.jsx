@@ -1,12 +1,18 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
+
+import { useTranslation } from 'react-i18next'
+import { translationKeys } from '../lib/translationKey'
+
 import ShowLogo from '../components/ShowLogo'
 import { Input } from '../components/ui/input'
 
 const Login = () => {
   const [showEye, setShowEye] = useState(true)
   const [errorMessage, setErrorMessage] = useState('')
+
+  const { t } = useTranslation()
 
   const onSubmitingSignUpForm = (e) => {
     e.preventDefault()
@@ -16,16 +22,16 @@ const Login = () => {
     const password2 = e.target.password2.value
 
     if (password1 !== password2) {
-      setErrorMessage('Parollar mos emas')
+      setErrorMessage(`${t(translationKeys['Invalid email or password.'])}`)
       return
     }
 
     if (!isStrongPassword(password1)) {
-      setErrorMessage('Password is not valid')
+      setErrorMessage(`${t(translationKeys['Invalid email or password.'])}`)
     }
 
     if (!isValidEmail(email)) {
-      setErrorMessage("Notog'ri email formati yoki email majburiy maydon")
+      setErrorMessage(`${t(translationKeys['Invalid email or password.'])}`)
       return
     }
 
@@ -60,23 +66,23 @@ const Login = () => {
       >
         <div className="flex justify-center items-center flex-col">
           <img src="/assets/logo.svg" alt="logo" loading="lazy" className="w-40 h-20" />
-          <div className="text-gray-700 text-center text-20 pt-10">Registration</div>
+          <div className="text-gray-700 text-center text-20 pt-10">{t(translationKeys.Registration)}</div>
           <div className="mt-3 mb-10 text-gray-400 text-center font-inter text-15 font-normal leading-5">
-            For Both Staff & Students
+            {t(translationKeys['For Both Staff & Students'])}
           </div>
         </div>
 
         <div className="flex flex-col justify-center gap-4">
           <div>
             <label htmlFor="email" className="text-gray-700 text-16 leading-4 mb-2">
-              Email
+              {t(translationKeys.Email)}
             </label>
             <Input type="email" name="email" id="email" required placeholder="username@collegename.ac.in" />
           </div>
 
           <div>
             <label htmlFor="password1" className="text-gray-700 text-16 leading-4 mb-2">
-              Password
+              {t(translationKeys.Password)}
             </label>
             <div className="relative">
               <Input
@@ -100,7 +106,7 @@ const Login = () => {
           </div>
           <div>
             <label htmlFor="password2" className="text-gray-700 text-16 leading-4 mb-2">
-              Confirm Password
+              {t(translationKeys['Confirm Password'])}
             </label>
             <div className="relative">
               <Input
@@ -131,12 +137,12 @@ const Login = () => {
           type="submit"
           onSubmit={onSubmitingSignUpForm}
         >
-          Login
+          {t(translationKeys.Register)}
         </button>
         <p className="text-gray-700 text-base font-normal leading-4">
-          Already a User?{' '}
+          {t(translationKeys['Already a User?'])}{' '}
           <Link to="/login" className="underline">
-            Login now
+            {t(translationKeys['Login now'])}
           </Link>
         </p>
       </form>
