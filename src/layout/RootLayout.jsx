@@ -4,7 +4,10 @@ import Sidebar from './Sidebar'
 
 function RootLayout() {
   return (
-    <div className="py-7 px-10" style={{ backgroundImage: 'url(/assets/bodyBG.png)' }}>
+    <div
+      className="py-7 px-10 h-screen bg-cover bg-center bg-no-repeat font-inter font-normal"
+      style={{ backgroundImage: 'url(/assets/bodyBG.png)' }}
+    >
       <Navbar />
       <main>
         <Outlet />

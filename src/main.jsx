@@ -8,8 +8,8 @@ function Main() {
   const routes = createBrowserRouter(
     createRoutesFromElements(
       <Route element={<RootLayout />}>
-        <Route index element={<App />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/" element={<App />} />
         <Route path="*" element={<NotFound />} />
       </Route>,
     ),
