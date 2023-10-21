@@ -15,37 +15,37 @@ const firebaseConfig = {
 initializeApp(firebaseConfig)
 
 // init services
-const db = getFirestore()
+// const db = getFirestore()
 
 // collection ref
-const booksCollection = collection(db, 'books')
+// const booksCollection = collection(db, 'books')
 
 // get collection data
-getDocs(booksCollection)
-  .then((snapshot) => {
-    // console.log(snapshot.docs)
-    let books = []
-    snapshot.docs.forEach((doc) => {
-      books.push({ ...doc.data(), id: doc.id })
-    })
-    console.log('books', books)
-  })
-  .catch((err) => {
-    console.log(err.message)
-  })
+// getDocs(booksCollection)
+//   .then((snapshot) => {
+//     // console.log(snapshot.docs)
+//     let books = []
+//     snapshot.docs.forEach((doc) => {
+//       books.push({ ...doc.data(), id: doc.id })
+//     })
+//     console.log('books', books)
+//   })
+//   .catch((err) => {
+//     console.log(err.message)
+//   })
 
 // Data for the new book document
-const newBookData = {
-  author: 'Steve Krug',
-  eBook: true,
-  id: 'FlcqlHRW63a1IHdP3Y0d',
-  isAudio: true,
-  isHardCopy: true,
-  providedYear: 2000,
-  ratings: 4.5,
-  status: 'In-Shelf',
-  title: 'Don’t Make Me Think ',
-}
+// const newBookData = {
+//   author: 'Steve Krug',
+//   eBook: true,
+//   id: 'FlcqlHRW63a1IHdP3Y0d',
+//   isAudio: true,
+//   isHardCopy: true,
+//   providedYear: 2000,
+//   ratings: 4.5,
+//   status: 'In-Shelf',
+//   title: 'Don’t Make Me Think ',
+// }
 
 // Add a new document to the "books" collection
 // Check if a document with similar data exists

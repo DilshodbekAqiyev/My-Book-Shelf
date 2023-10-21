@@ -13,5 +13,16 @@
   "Confirm Password": "Parolni tasdiqlang",
   "Register": "Ro'yxatdan o'ting",
   "Already a User?": "Foydalanuvchimisiz?",
-  "Login now": "Hoziroq kiring"
+  "Login now": "Hoziroq kiring",
+  "Search": "Qidirish",
+  "Home": "Asosiy sahifa",
+  "My Shelf": "Mening javonim",
+  "Contribute": "Hissa qo‘shish",
+  "About": "Sayt haqida",
+  "Support": "Qo'llab-quvvatlash",
+  "Terms & Condition": "Foydalanuvchi shartlari",
+  "Profile": "Profil",
+  "Favourite": "Sevimli",
+  "Payments": "To'lovlar",
+  "Logout": "Chiqish"
 }
