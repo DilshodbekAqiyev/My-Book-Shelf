@@ -1,19 +1,17 @@
 import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
-import Sidebar from './Sidebar'
 
 function RootLayout() {
   return (
     <div
-      className="py-7 px-10 h-screen bg-cover bg-center bg-no-repeat font-inter font-normal"
+      className="py-7 px-10 bg-cover bg-center bg-no-repeat font-inter font-normal max-lg:p-5"
       style={{ backgroundImage: 'url(/assets/bodyBG.png)' }}
     >
-      <div className="bg-gray-200 rounded-xl">
+      <div className="bg-gray-200 rounded-xl max-w-[1650px] mx-auto">
         <Navbar />
         <main>
           <Outlet />
         </main>
-        <Sidebar />
       </div>
     </div>
   )

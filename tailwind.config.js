@@ -5,14 +5,20 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '0.5rem',
       screens: {
-        '2xl': '1400px',
+        'max-xs': [{ max: '480px' }],
+        'max-sm': '640px',
+        'max-md': '768px',
+        'max-lg': '1024px',
+        'max-xl': '1280px',
+        'max-2xl': '1536px',
       },
     },
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans'],
+        'digital-numbers': ['Orbitron', 'sans'],
       },
       colors: {
         border: 'var(--border)',

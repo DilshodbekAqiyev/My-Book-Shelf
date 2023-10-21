@@ -14,5 +14,16 @@
   "Register": "Register",
   "Already a User?": "Already a User?",
   "Login now": "Login now",
-  "Invalid email or password.": "Invalid email or password."
+  "Invalid email or password.": "Invalid email or password.",
+  "Search": "Search",
+  "Home": "Home",
+  "My Shelf": "My Shelf",
+  "Contribute": "Contribute",
+  "About": "About",
+  "Support": "Support",
+  "Terms & Condition": "Terms & Condition",
+  "Profile": "Profile",
+  "Favourite": "Favourite",
+  "Payments": "Payments",
+  "Logout": "Logout"
 }

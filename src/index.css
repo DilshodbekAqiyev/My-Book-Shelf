@@ -74,3 +74,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+.active {
+  color: #4d4d4d;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.navbarProfileDropdown .active {
+  font-weight: 600;
+  font-size: 16px;
+}

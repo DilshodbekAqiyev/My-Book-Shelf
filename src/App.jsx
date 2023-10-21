@@ -16,8 +16,7 @@ function App() {
     <>
       <ShowLogo />
       <div>
-        <h1>{t(translationKeys['Welcome to React'])}</h1>
-        {/* <h1>{t('count')}</h1> */}
+        <h1 className="text-red-500">{t(translationKeys['For Both Staff & Students'])}</h1>
       </div>
       <Button onClick={() => changeLanguage('en')}>En</Button>
       <Button onClick={() => changeLanguage('ru')}>ru</Button>
