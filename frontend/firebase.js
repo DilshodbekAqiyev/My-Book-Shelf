@@ -1,18 +1,18 @@
-import { initializeApp } from 'firebase/app'
-import { addDoc, collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
+// import { initializeApp } from 'firebase/app'
+// import { addDoc, collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyDXsuWO5UNZMuuDgnDefoIR3s5U-LuFFDE',
-  authDomain: 'my-book-shelf-7777.firebaseapp.com',
-  projectId: 'my-book-shelf-7777',
-  storageBucket: 'my-book-shelf-7777.appspot.com',
-  messagingSenderId: '47822684463',
-  appId: '1:47822684463:web:5f0efffb5a4f19fb4fe1da',
-  measurementId: 'G-LXQW3Q4Q56',
-}
+// const firebaseConfig = {
+//   apiKey: 'AIzaSyDXsuWO5UNZMuuDgnDefoIR3s5U-LuFFDE',
+//   authDomain: 'my-book-shelf-7777.firebaseapp.com',
+//   projectId: 'my-book-shelf-7777',
+//   storageBucket: 'my-book-shelf-7777.appspot.com',
+//   messagingSenderId: '47822684463',
+//   appId: '1:47822684463:web:5f0efffb5a4f19fb4fe1da',
+//   measurementId: 'G-LXQW3Q4Q56',
+// }
 
 // init firevase app
-initializeApp(firebaseConfig)
+// initializeApp(firebaseConfig)
 
 // init services
 // const db = getFirestore()
