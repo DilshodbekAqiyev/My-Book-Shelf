@@ -3,8 +3,6 @@ import { useTranslation } from 'react-i18next'
 import { AiOutlineGift, AiOutlineHome, AiOutlineSearch } from 'react-icons/ai'
 import { GiBookshelf, GiHamburgerMenu } from 'react-icons/gi'
 import { SiGoogletranslate } from 'react-icons/si'
-import { WiTime9 } from 'react-icons/wi'
-import { FcCalendar } from 'react-icons/fc'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../components/ui/sheet'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select'
 import {
@@ -17,6 +15,7 @@ import Image from '../components/Image'
 import { Input } from '../components/ui/input'
 import { Button } from '../components/ui/button'
 import { translationKeys } from '../lib/translationKey'
+import DateTimeComponent from '../components/DateTimeComponent'
 
 function Navbar() {
   const { t, i18n } = useTranslation()
@@ -124,20 +123,7 @@ function Navbar() {
           </SelectContent>
         </Select>
 
-        <div className="rounded-full bg-white shadow-md px-[30px] h-[40px] flex justify-between gap-5 items-center">
-          <div className="flex items-center gap-3">
-            <WiTime9 size={20} color="#F76A56" />
-            <span className="whitespace-nowrap text-gray-700 text-center font-digital-numbers text-sm font-normal leading-5 tracking-wider">
-              09:00 AM
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
-            <FcCalendar size={20} />
-            <span className="whitespace-nowrap text-gray-700 text-center font-digital-numbers text-sm font-normal leading-5 tracking-wider">
-              4-Mar-2023
-            </span>
-          </div>
-        </div>
+        <DateTimeComponent />
 
         <DropdownMenu>
           <DropdownMenuTrigger className="navbarProfileDropdown rounded-full bg-white shadow-md p-[3px] pr-5 h-[40px] flex justify-between gap-5 items-center">
